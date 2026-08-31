@@ -3,7 +3,7 @@
 // Company: N/A
 // Engineer: DGcat64
 // 
-// Create Date: 03/23/2026 06:11:50 PM
+// Create Date: 03/22/2026 06:11:50 PM
 // Design Name: Round-Robin Arbiter Verification Environment
 // Module Name: rr_arbiter_tb
 // Project Name: 4-Requester Round-Robin Arbiter Design & Verification
@@ -31,9 +31,9 @@ module rr_arbiter_tb;
     logic [N-1:0] req;
     logic [N-1:0] grant;
     
-// -------------------------------------------------
-// ASSERTION 1: Grant must be one-hot or zero
-// -------------------------------------------------
+
+// ASSertion 1: Grant must be one hot or zero
+
 
 assert_onehot_grant:
     assert property (@(posedge clk)
@@ -43,9 +43,9 @@ assert_onehot_grant:
     else
         $error("ASSERTION FAILED: Multiple grants active! grant=%b", grant); // added after 100 random
         
-// -------------------------------------------------
-// ASSERTION 2: Never grant a non-requesting client
-// -------------------------------------------------
+
+// Assertion 2: Never grant a non-requesting client
+
 
 assert_grant_requires_request:
     assert property (@(posedge clk)
@@ -60,9 +60,9 @@ assert_grant_requires_request:
         );
 
 
-// -------------------------------------------------
-// ASSERTION 3: No requests means no grants
-// -------------------------------------------------
+
+// Assertion 3: No requests means no grants
+
 
 assert_no_request_no_grant:
     assert property (@(posedge clk)
@@ -76,9 +76,9 @@ assert_no_request_no_grant:
             grant
         );
         
- // -------------------------------------------------
-// FUNCTIONAL COVERAGE
-// -------------------------------------------------
+
+// Functional Coverage
+
 
 covergroup arbiter_cg @(posedge clk); 
 
@@ -306,9 +306,9 @@ $display("------------------------------");
 
 @(posedge clk);
 
-// -------------------------------------------------
-// REFERENCE MODEL VERIFICATION
-// -------------------------------------------------
+
+// Reference model verification
+
 
 $display("------------------------------");
 $display("STARTING REFERENCE MODEL TESTS");
@@ -363,9 +363,9 @@ $display("------------------------------");
 $display("REFERENCE MODEL TESTS PASSED");
 $display("------------------------------");
 
-// -------------------------------------------------
-// RANDOMIZED VERIFICATION
-// -------------------------------------------------
+
+// Randomized verification
+
 
 $display("------------------------------");
 $display("STARTING RANDOMIZED TESTS");
