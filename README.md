@@ -29,6 +29,7 @@ All test cases completed successfully.
 
 ## Project Structure
 
+```text
 systemverilog-round-robin-arbiter/
 ├── 4-requester round-robin arbiter.xpr
 ├── 4-requester round-robin arbiter.srcs/
@@ -40,3 +41,4 @@ systemverilog-round-robin-arbiter/
 │           └── rr_arbiter_tb.sv
 ├── README.md
 └── .gitignore
+```
